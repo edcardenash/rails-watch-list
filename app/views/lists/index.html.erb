@@ -1,0 +1,39 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://www.iconpacks.net/icons/1/free-movie-icon-850-thumb.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      Movies watch list
+    </a>
+    <div>
+      <div>
+        <%= link_to 'Create a movie list', new_list_path, class:"btn btn-light" %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="banner mb-5 d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://ca-times.brightspotcdn.com/dims4/default/3bea49f/2147483647/strip/true/crop/3445x2297+0+0/resize/1024x683!/format/webp/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F2b%2Faf%2F4da896fc411c86d36e7e77287618%2Fice-spiderman.jpg); height: 50vh; size:cover; position: center; background-size:cover;">
+  <h1 class="text-white display-2">Movies watch lists</h1>
+</div>
+
+<div class="filling-box">
+  <div class="upper-div">
+
+    <div class="container">
+      <div class="row">
+        <% @lists.each do |list| %>
+          <div class="col-6 col-md-4 mb-3">
+            <%= link_to list_path(list), class:"text-decoration-none" do %>
+
+              <div class="wagon-card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(); height: 200px; size:cover; position: center;">
+              <p><%= list.name %></p>
+              </div>
+
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
